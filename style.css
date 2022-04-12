@@ -100,6 +100,26 @@ blockquote {
   font-size: 40px;
   justify-self: center;
 }
+blockquote::after,
+blockquote::before {content: "";
+display: block;
+border: 1px solid var(--limetka);
+width: 100px;
+height: 5px;
+background-color: var(--limetka);
+margin: 30px auto;}
+
+
+.tip-vlevo::before {content: "";
+  display: inline-block;
+  border: 1px solid var(--oranzova);
+  width: 5px;
+  height: auto;
+  background-color: var(--oranzova);
+
+}
+
+
 
 p,
 h1,
@@ -110,8 +130,7 @@ h3 {
 
 }
 
-.tip-vlevo {grid-column: 1;border: 1px solid #b2bec3;
-background-color: #b2bec3;
+.tip-vlevo {grid-column: 1;
 }
 
 .tip {border: 1 solid var(--seda);
@@ -132,5 +151,5 @@ footer a{color: var(--seda);}
 }
 
 h2 {color: var(--limetka);
-font-size: 36px;}
+font-size: 42px;}
 
