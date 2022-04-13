@@ -76,11 +76,13 @@ blockquote {
 .blog {
   display: grid;
   grid-template-columns: 1fr 4fr 2fr;
-
+  
   gap: 40px;
   align-items: center;
 }
-figure img {width: 100%;}
+figure img {
+  width: 100%;
+}
 
 header {
   grid-column: 2;
@@ -88,12 +90,17 @@ header {
 }
 h1 {
   color: var(--limetka);
-  font-size: 70px;
+  font-size: 100px;
+  padding-bottom: 30px;
+}
+.meta {
+  color: var(--seda);
 }
 
 figure,
 blockquote {
-  grid-column: 1/-1;margin: 0;
+  grid-column: 1/-1;
+  margin: 0;
 }
 blockquote {
   color: var(--seda);
@@ -101,25 +108,43 @@ blockquote {
   justify-self: center;
 }
 blockquote::after,
-blockquote::before {content: "";
-display: block;
-border: 1px solid var(--limetka);
-width: 100px;
-height: 5px;
-background-color: var(--limetka);
-margin: 30px auto;}
-
-
-.tip-vlevo::before {content: "";
-  display: inline-block;
-  border: 1px solid var(--oranzova);
-  width: 5px;
-  height: auto;
-  background-color: var(--oranzova);
-
+blockquote::before {
+  content: "";
+  display: block;
+  border: 1px solid var(--limetka);
+  width: 100px;
+  height: 5px;
+  background-color: var(--limetka);
+  margin: 30px auto;
 }
 
+.tip-vlevo {
+  position: relative;
+}
 
+.tip-vlevo::before {
+  content: "";
+  display: inline-block;
+  border: 1px solid var(--zluta);
+  width: 3px;
+  height: 100%;
+  background-color: var(--zluta);
+  position: absolute;
+  left: 100%;
+}
+
+.tip-vpravo {
+  position: relative;
+}
+.tip-vpravo::before {
+  content: "";
+  display: inline-block;
+  border: 1px solid var(--zluta);
+  width: 3px;
+  height: 100%;
+  background-color: var(--zluta);
+  position: absolute;
+}
 
 p,
 h1,
@@ -127,29 +152,46 @@ h2,
 h3 {
   grid-column: 2;
   justify-items: center;
-
 }
 
-.tip-vlevo {grid-column: 1;
+.tip-vlevo {
+  grid-column: 1;
 }
 
-.tip {border: 1 solid var(--seda);
-background-color: var(--seda);
+.tip {
+  border: 1 solid var(--seda);
+  background-color: var(--seda);
 }
 
-.tip p {text-align: right;padding: 10px;}
-.tip-vpravo p {text-align: left; padding: 10px;}
-
-a{color: var(--oranzova);
+.tip p {
+  text-align: right;
+  padding: 10px;
+}
+.tip-vpravo p {
+  text-align: left;
+  padding: 10px;
 }
 
-footer{grid-column: 2;
-color: var(--seda);}
-footer a{color: var(--seda);}
-
-.tip , .tip-vlevo img {width: 100%; object-fit: cover; padding: 0;
+a {
+  color: var(--oranzova);
 }
 
-h2 {color: var(--limetka);
-font-size: 42px;}
+footer {
+  grid-column: 2;
+  color: var(--seda);
+}
+footer a {
+  color: var(--seda);
+}
 
+.tip,
+.tip-vlevo img {
+  width: 100%;
+  object-fit: cover;
+  padding: 0;
+}
+
+h2 {
+  color: var(--limetka);
+  font-size: 42px;
+}
